@@ -51,18 +51,13 @@ public class BD04 {
     }
 
     public boolean verificar(Docente docente) {
-        boolean verificar = false;
+        boolean verificar = true;
         int cont = 0;
         ArrayList<Docente> doc = leerDocentes();
         for (Docente d : doc) {
-            if (docente.getId() != d.getId()) {
-                cont++;
-            } else {
-                cont += 2;
-            }
-        }
-        if (cont == 1) {
-            verificar = true;
+            if (docente.getId() == d.getId()) {
+                verificar = false;
+            } 
         }
         return verificar;
     }
